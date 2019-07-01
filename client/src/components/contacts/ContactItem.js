@@ -2,14 +2,16 @@ import React, { useContext } from "react";
 import PropTypes from "prop-types";
 import ContactContext from "../../context/contact/contactContext";
 
+//TODO:Text font style needs to be fixed
+
 const ContactItem = ({ contact }) => {
   const contactContext = useContext(ContactContext);
   const { deleteContact, setCurrent, clearCurrent } = contactContext;
 
-  const { _id, name, email, phone, type } = contact;
+  const { id, name, email, phone, type } = contact;
 
   const onDelete = () => {
-    deleteContact(_id);
+    deleteContact(id);
     clearCurrent();
   };
 
@@ -30,12 +32,12 @@ const ContactItem = ({ contact }) => {
       <ul className="list">
         {email && (
           <li>
-            <i className="fas fa-envelope-open" /> {email}
+            <i className="fas fa-envelope-open"> {email}</i>
           </li>
         )}
         {phone && (
           <li>
-            <i className="fas fa-phone" /> {phone}
+            <i className="fas fa-phone"> {phone}</i>
           </li>
         )}
       </ul>
@@ -54,7 +56,7 @@ const ContactItem = ({ contact }) => {
   );
 };
 
-ContactItem.propTypes = {
+ContactItem.propType = {
   contact: PropTypes.object.isRequired
 };
 
