@@ -1,6 +1,8 @@
 import React, { useState, useContext, useEffect } from "react";
 import ContactContext from "../../context/contact/contactContext";
 
+//@TODO: Fix contact form so that all fields are cleared when a contact is created or updated (email field not empty)
+
 const ContactForm = () => {
   const contactContext = useContext(ContactContext);
 
