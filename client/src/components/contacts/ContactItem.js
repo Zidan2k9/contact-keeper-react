@@ -56,7 +56,7 @@ const ContactItem = ({ contact }) => {
   );
 };
 
-ContactItem.propType = {
+ContactItem.propTypes = {
   contact: PropTypes.object.isRequired
 };
 
